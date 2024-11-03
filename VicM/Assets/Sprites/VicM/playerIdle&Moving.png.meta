@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9b57c0846878bb848aff9bd6e7af0f08
+guid: 2980e9d030e5f5f49aa196188f820888
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,91 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerMoving_4
+      name: playerIdle&Moving_0
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 6075
+        width: 1289
+        height: 1095
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24776c1fa6f7b0439618a2c9ebbd12b
+      internalID: -808546533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerIdle&Moving_1
+      rect:
+        serializedVersion: 2
+        x: 1772
+        y: 6079
+        width: 1301
+        height: 1227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aefb302e8ed762143af3b16da7097f29
+      internalID: 1705104215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerIdle&Moving_2
+      rect:
+        serializedVersion: 2
+        x: 3230
+        y: 6108
+        width: 1293
+        height: 1095
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a922acc680a3e96458efdb0d120a334e
+      internalID: 1335616522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerIdle&Moving_3
+      rect:
+        serializedVersion: 2
+        x: 4603
+        y: 6108
+        width: 1278
+        height: 1040
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25a94294057bf743bb3f140625bafe5
+      internalID: -654322994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerIdle&Moving_4
       rect:
         serializedVersion: 2
         x: 242
@@ -111,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14e090f8b174b9448a71bae01f48c9a9
-      internalID: -1019598577
+      spriteID: 2b7df72640b2f9a4b92e94c10a7a2127
+      internalID: 624812905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerMoving_5
+      name: playerIdle&Moving_5
       rect:
         serializedVersion: 2
         x: 1772
@@ -132,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 593dfec9c3be7a149b2b8291f7fcca54
-      internalID: 131182287
+      spriteID: 994982f0b88f52c4dba47cfe30b28b6b
+      internalID: -592835636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerMoving_6
+      name: playerIdle&Moving_6
       rect:
         serializedVersion: 2
         x: 3116
@@ -153,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95af0d332dd20604e8149ce4dc715417
-      internalID: -261175828
+      spriteID: 051c2ce9b65db234897fe7bb3430c705
+      internalID: 224327224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerMoving_7
+      name: playerIdle&Moving_7
       rect:
         serializedVersion: 2
         x: 4666
@@ -174,8 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9bcd7366904879418a3aa619fd78f91
-      internalID: 2006486382
+      spriteID: 331355c62f3b3bf42ac26ba08ebd3766
+      internalID: 1681630927
       vertices: []
       indices: 
       edges: []
@@ -191,14 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      playerMoving_0: -1171880484
-      playerMoving_1: 127618453
-      playerMoving_2: 2063133432
-      playerMoving_3: -1957980584
-      playerMoving_4: -1019598577
-      playerMoving_5: 131182287
-      playerMoving_6: -261175828
-      playerMoving_7: 2006486382
+      playerIdle&Moving_0: -808546533
+      playerIdle&Moving_1: 1705104215
+      playerIdle&Moving_2: 1335616522
+      playerIdle&Moving_3: -654322994
+      playerIdle&Moving_4: 624812905
+      playerIdle&Moving_5: -592835636
+      playerIdle&Moving_6: 224327224
+      playerIdle&Moving_7: 1681630927
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
