@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class VicMMovement : MonoBehaviour
 {
-    // get animator
-    private Animator animator;
-
-    // player speed
+    // player attributes
     public float moveSpeed;
     float speedX, speedY;
+    private bool isFacingRight = false; // faces left by default
 
     // components
-    Rigidbody2D rb;
-    SpriteRenderer sr;
+    private Rigidbody2D rb;
+    private Animator animator;
 
     void Start()
     {
         // get rigid body
         rb = GetComponent<Rigidbody2D>();
-
-        // get sprite renderer
-        sr = GetComponent<SpriteRenderer>();
 
         // get animator
         animator = GetComponent<Animator>();
@@ -47,17 +42,35 @@ public class VicMMovement : MonoBehaviour
             animator.SetBool("isWalking", true);
 
             // flip character if moving left or right
-            if (speedX > 0)
+            if (speedX > 0 && !isFacingRight)
             {
-                sr.flipX = true;
+                Flip();
             }
-            if (speedX < 0)
+            else if (speedX < 0 && isFacingRight)
             {
-                sr.flipX = false;
+                Flip();
             }
         }
 
         // set vicM movement
         rb.velocity = new Vector2(speedX, speedY);
+
+        // set enemy pos to vicM position
+        Enemy.VICMPOS = transform.position;
+    }
+
+    private void Flip()
+    {
+        // Toggle the facing direction
+        isFacingRight = !isFacingRight;
+
+        // Flip the character by changing the scale
+        Vector3 scale = transform.localScale;
+
+        // Invert the x-axis scale to flip the character
+        scale.x *= -1;
+
+        // set local scale to sclae
+        transform.localScale = scale;
     }
 }
