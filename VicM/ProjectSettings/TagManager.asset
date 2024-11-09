@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: VicM
+    uniqueID: 3336100031
+    locked: 0
+  - name: Enemy
+    uniqueID: 1385012519
+    locked: 0
+  - name: Weapon
+    uniqueID: 3199870245
+    locked: 0
