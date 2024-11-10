@@ -30,7 +30,7 @@ public class VicMMovement : MonoBehaviour
         speedY = Input.GetAxisRaw("Vertical") * moveSpeed;
 
         // check for idle
-        if (speedX == 0)
+        if (speedX == 0 && speedY == 0)
         {
             // set vicM isWalking to false
             animator.SetBool("isWalking", false);
