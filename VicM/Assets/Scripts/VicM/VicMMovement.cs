@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VicMMovement : MonoBehaviour
 {
@@ -57,6 +58,7 @@ public class VicMMovement : MonoBehaviour
 
         // set enemy pos to vicM position
         Enemy.VICMPOS = transform.position;
+
     }
 
     private void Flip()
@@ -73,4 +75,5 @@ public class VicMMovement : MonoBehaviour
         // set local scale to sclae
         transform.localScale = scale;
     }
+   
 }
