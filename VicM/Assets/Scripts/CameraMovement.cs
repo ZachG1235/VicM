@@ -8,12 +8,12 @@ public class CameraMovement : MonoBehaviour
     private float smoothTime = 0.25f;
     private Vector3 velocity = Vector3.zero;
 
-    [SerializeField] private Transform target;
+    private Transform target;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        target = GameManager.SGameManager.VicM.transform;
     }
 
     // Update is called once per frame
