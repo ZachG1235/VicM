@@ -293,7 +293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2691b9d3436bd4aa7087a5f21c7ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1508321350}
 --- !u!114 &647029558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,7 +783,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd82575e0bc26046b5f99fea1114f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 289405434}
+  weaponDamage: 25
+  chopsticks: {fileID: 0}
 --- !u!1 &1805159501
 GameObject:
   m_ObjectHideFlags: 0

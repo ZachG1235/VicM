@@ -7,16 +7,26 @@ public class Enemy : MonoBehaviour
     // Get VICMPOS position
     static public Vector3 VICMPOS;
     public int MoveSpeed = -5;    // Speed at which the enemy moves
-    public int MaxDist = 10;     // Max distance to the player to start an action
+    public int MaxDist = 1;     // Max distance to the player to start an action
     public int MinDist = -10;      // Min distance from the player to stop or act
     private bool isFacingRight = true; // faces right by default
     private SpriteRenderer sr;
+    public Animator animator;
+    private Rigidbody2D rb;
+    public HealthBar healthBar;
+    public int maxHealth = 100;
 
     // Start is called before the first frame update
     void Start()
     {
-        // You could initialize some variables or state here if needed
+        // get components
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+
+        // set max health
+        // should be able to edit this for buffs/stat increases or whatever 
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -50,6 +60,8 @@ public class Enemy : MonoBehaviour
             {
                 // Call any function you want when within MaxDist, like shooting
                 Debug.Log("Enemy is within MaxDist, triggering action");
+                animator.SetTrigger("attack");
+                StartCoroutine("ChangeSpeedTemporarily");
             }
         }
     }
@@ -67,5 +79,32 @@ public class Enemy : MonoBehaviour
 
         // set local scale to sclae
         transform.localScale = scale;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        // remove from maxhealth
+        maxHealth -= damage;
+
+        // set new health
+        healthBar.SetHealth(maxHealth);
+
+        // check if no more health
+        if (maxHealth <= 0)
+        {
+            // "enemy" dies
+            // can make it drop something here if we want
+            Destroy(gameObject);
+        }
+    }
+
+    // this is used to make the enemy stop moving temporarily if it gets hit or attacks
+    public IEnumerator ChangeSpeedTemporarily()
+    {
+        MoveSpeed = 0;
+
+        yield return new WaitForSeconds(2);
+
+        MoveSpeed = 1;
     }
 }
