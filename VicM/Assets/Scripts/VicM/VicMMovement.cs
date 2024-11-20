@@ -79,5 +79,6 @@ public class VicMMovement : MonoBehaviour
         // set local scale to sclae
         transform.localScale = scale;
     }
-   
+
+
 }
