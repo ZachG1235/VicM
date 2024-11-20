@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VicM
       objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: 7ff6fe42427439d4b8c2aa337a3a365c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 7ff6fe42427439d4b8c2aa337a3a365c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
