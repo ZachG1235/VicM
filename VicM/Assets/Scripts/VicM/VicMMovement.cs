@@ -14,6 +14,10 @@ public class VicMMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
         // get rigid body
@@ -75,5 +79,6 @@ public class VicMMovement : MonoBehaviour
         // set local scale to sclae
         transform.localScale = scale;
     }
-   
+
+
 }
