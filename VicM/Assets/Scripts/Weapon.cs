@@ -24,7 +24,8 @@ public class Weapon : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // check if weapon is hitting enemy
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy")
+            || collision.gameObject.CompareTag("EnemyAttack"))
         {
             // deal damage to enemy
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();

@@ -10,19 +10,20 @@ public class Enemy : MonoBehaviour
     public int MaxDist = 1;     // Max distance to the player to start an action
     public int MinDist = -10;      // Min distance from the player to stop or act
     private bool isFacingRight = true; // faces right by default
-    private SpriteRenderer sr;
     public Animator animator;
     private Rigidbody2D rb;
+    private Collider2D coll;
     public HealthBar healthBar;
     public int maxHealth = 100;
+    public int damage;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         // get components
-        sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<Collider2D>();
 
         // set max health
         // should be able to edit this for buffs/stat increases or whatever 
@@ -31,6 +32,11 @@ public class Enemy : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        Move();
+    }
+
+    private void Move()
     {
         // Calculate the direction to the VICMPOS (player position)
         Vector3 directionToTarget = VICMPOS - transform.position;
@@ -58,10 +64,8 @@ public class Enemy : MonoBehaviour
             // Check if within MaxDist for triggering actions
             if (distanceToTarget <= MaxDist)
             {
-                // Call any function you want when within MaxDist, like shooting
                 Debug.Log("Enemy is within MaxDist, triggering action");
-                animator.SetTrigger("attack");
-                StartCoroutine("ChangeSpeedTemporarily");
+                Attack();
             }
         }
     }
@@ -81,10 +85,25 @@ public class Enemy : MonoBehaviour
         transform.localScale = scale;
     }
 
+    public virtual void Attack()
+    {
+        // set tag to EnemyAttack; so that player doesn't take damage by contact
+        gameObject.tag = "EnemyAttack";
+
+        // animate attack
+        animator.SetTrigger("attack");
+
+        // make enemy stop moving
+        StartCoroutine(ChangeSpeedTemporarily());
+    }
+
     public void TakeDamage(int damage)
     {
         // remove from maxhealth
         maxHealth -= damage;
+
+        // iframes
+        StartCoroutine(EnemyIFrames());
 
         // set new health
         healthBar.SetHealth(maxHealth);
@@ -98,6 +117,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // sets damage that enemy will do to player
+    // used in subclasses
+    public void SetDamage(int damageDealt)
+    {
+        this.damage = damageDealt;
+    }
+
     // this is used to make the enemy stop moving temporarily if it gets hit or attacks
     public IEnumerator ChangeSpeedTemporarily()
     {
@@ -106,5 +132,16 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         MoveSpeed = 1;
+        gameObject.tag = "Enemy";
+    }
+
+    // makes sure enemy can't continually take damage (probably)
+    IEnumerator EnemyIFrames()
+    {
+        coll.enabled = false;
+
+        yield return new WaitForSeconds(2);
+
+        coll.enabled = true;
     }
 }
