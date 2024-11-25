@@ -16,6 +16,7 @@ public class VicMMovement : MonoBehaviour
 
     void Awake()
     {
+        // so that VicM stays through scene loads
         DontDestroyOnLoad(gameObject);
     }
     void Start()
@@ -79,6 +80,4 @@ public class VicMMovement : MonoBehaviour
         // set local scale to sclae
         transform.localScale = scale;
     }
-
-
 }
