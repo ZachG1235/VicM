@@ -11,7 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon 1/Dungeon1_1-Start.unity
     guid: 95b3323e606c95f4485e48555fa44aa8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Dungeon 1/Dungeon1_13.unity
     guid: 51f774e9f17c169459820b7f17b1c9e2
+  - enabled: 1
+    path: Assets/Scenes/Casino/CasinoLobby.unity
+    guid: 91c7941702b3247c3ac98a16a1856b41
+  - enabled: 1
+    path: Assets/Scenes/StartingScreen.unity
+    guid: f4beff2476e2a4db68e43fa503543be2
   m_configObjects: {}
