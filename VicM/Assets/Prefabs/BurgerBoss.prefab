@@ -228,7 +228,7 @@ PrefabInstance:
       addedObject: {fileID: 6256766520759237273}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 36d1e69fdb3a2454daf185916631e5ec, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 50765484380108554}
+      addedObject: {fileID: 2368216285734693214}
     - targetCorrespondingSourceObject: {fileID: -3263344706565303754, guid: 36d1e69fdb3a2454daf185916631e5ec, type: 3}
       insertIndex: -1
       addedObject: {fileID: 642183330100446881}
@@ -336,7 +336,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.950539, y: 5.891494}
   m_EdgeRadius: 0
---- !u!114 &50765484380108554
+--- !u!114 &2368216285734693214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1606384947814245731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30f58e4888785eb4190f63a3520bd9be, type: 3}
+  m_Script: {fileID: 11500000, guid: d00c3853c470bab44b60ea2f37b3c932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 1
@@ -354,8 +354,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   healthBar: {fileID: 4671673577930438067}
   maxHealth: 750
-  damage: 0
-  burgerDamage: 50
+  damage: 50
 --- !u!1 &4835331086128518888 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3263344706565303754, guid: 36d1e69fdb3a2454daf185916631e5ec, type: 3}
@@ -368,7 +367,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4835331086128518888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:

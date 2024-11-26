@@ -31,7 +31,17 @@ public class GameManager : MonoBehaviour
         {0,0,13,0},
     };
 
+    private Vector3[] dungeon1DoorPositions = new Vector3[4]
+    {
+        new Vector3 (0.4f, 9, 0),
+        new Vector3 (13f, 2, 0),
+        new Vector3 (0.4f, -7, 0),
+        new Vector3 (-12f, 2, 0),
+    };
+
     private int currentRoom;
+    public GameObject entrancePrefab;
+    public Animator transitioner;
 
     void Awake()
     {
@@ -51,20 +61,52 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ChangeRoom(int roomNumber, Vector3 newPos)
     {
         // set roomNumber
         currentRoom = roomNumber;
 
         // load into new room
+        transitioner.SetTrigger("end");
         SceneManager.LoadScene(currentRoom);
+        transitioner.SetTrigger("start");
+
+        // check if loading into dungeon room
+        if (currentRoom > 0)
+        {
+            StartCoroutine(GenerateDoors());
+        }
 
         VicM.transform.position = newPos;
+    }
+
+    public IEnumerator GenerateDoors()
+    {
+        yield return new WaitForSeconds(2);
+
+        Debug.Log("GENERATING DOORS!");
+        // loop through doors array for current dungeon room
+        for (int door = 0; door < 4; door++)
+        {
+            // check if there is a door
+            if (dungeon1Rooms[currentRoom - 1,door] > 0)
+            {
+                // create new door at correct place
+                GameObject newDoor = Instantiate<GameObject>(entrancePrefab);
+                newDoor.transform.position = dungeon1DoorPositions[door];
+
+                Entrance entrance = newDoor.GetComponent<Entrance>();
+                entrance.nextRoomNumber = dungeon1Rooms[currentRoom - 1,door];
+
+                int nextPos;
+                if (door == 0) nextPos = 2;
+                else if (door == 1) nextPos = 3;
+                else if (door == 2) nextPos = 0;
+                else nextPos = 1;
+
+                // set vic m position in new scene
+                entrance.vicsNextPos = dungeon1DoorPositions[nextPos];
+            }
+        }
     }
 }

@@ -378,6 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponDamage: 25
   chopsticks: {fileID: 7709838368294035304, guid: efaf2a09b6792af40ab0daa42dce0c34, type: 3}
+  soySauce: {fileID: 2456801229893287825, guid: e970aa54df0c34844b3e2b79edb2a3fd, type: 3}
 --- !u!114 &2665200449520246785
 MonoBehaviour:
   m_ObjectHideFlags: 0
