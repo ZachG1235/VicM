@@ -5,22 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public int weaponDamage = 25;   // default to 25
-    public int attackDuration = 1;
-    private Collider2D weaponCollider;
 
-    void Start()
-    {
-        weaponCollider = GetComponent<Collider2D>();
-        weaponCollider.enabled = false;
-    }
-
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine("HideCollider");
-        }
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // check if weapon is hitting enemy
@@ -29,7 +14,7 @@ public class Weapon : MonoBehaviour
         {
             // deal damage to enemy
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.TakeDamage(weaponDamage);
+            enemy.TakeDamage(weaponDamage, true);
 
             // animate it
             enemy.animator.SetTrigger("attacked");
@@ -37,12 +22,22 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private IEnumerator HideCollider()
+    private void OnTriggerStay2D(Collider2D coll)
     {
-        weaponCollider.enabled = true;
+        // check if weapon is hitting enemy
+        if (coll.CompareTag("Enemy")
+            || coll.CompareTag("EnemyAttack"))
+        {
+            // deal damage to enemy
+            Enemy enemy = coll.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(weaponDamage, false);
 
-        yield return new WaitForSeconds(attackDuration);
-
-        weaponCollider.enabled = false;
+                // animate it
+                enemy.animator.SetTrigger("attacked");
+                StartCoroutine(enemy.ChangeSpeedTemporarily());
+            }
+        }
     }
 }

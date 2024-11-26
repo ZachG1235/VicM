@@ -97,13 +97,16 @@ public class Enemy : MonoBehaviour
         StartCoroutine(ChangeSpeedTemporarily());
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool iFrames)
     {
         // remove from maxhealth
         maxHealth -= damage;
 
-        // iframes
-        StartCoroutine(EnemyIFrames());
+        // check if iframes is enabled
+        if (iFrames)
+        {
+            StartCoroutine(EnemyIFrames());
+        }
 
         // set new health
         healthBar.SetHealth(maxHealth);
@@ -132,7 +135,10 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         MoveSpeed = 1;
-        gameObject.tag = "Enemy";
+        if (this != null)
+        {
+            gameObject.tag = "Enemy";
+        }
     }
 
     // makes sure enemy can't continually take damage (probably)

@@ -47,6 +47,7 @@ public class VicMMovement : MonoBehaviour
             // set vicM isWalking to true
             animator.SetBool("isWalking", true);
 
+            // this code makes vic face direction moving
             // flip character if moving left or right
             if (speedX > 0 && !isFacingRight)
             {
@@ -56,7 +57,23 @@ public class VicMMovement : MonoBehaviour
             {
                 Flip();
             }
+
+            // this code makes vic face where mouse is facing
+            // Get the mouse position in world space
+            // Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            // // Check if the mouse is to the left or right of the character
+            // if (mouseWorldPosition.x > transform.position.x && !isFacingRight)
+            // {
+            //     Flip();
+            // }
+            // else if (mouseWorldPosition.x < transform.position.x && isFacingRight)
+            // {
+            //     Flip();
+            // }
         }
+
+        
 
         // set vicM movement
         rb.velocity = new Vector2(speedX, speedY);
