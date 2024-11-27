@@ -46,6 +46,8 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        //Debug.Log(GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name);
+        if (GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name == "VicM_Dodge") return;
         Debug.Log("We just lost " + damage + " health!");
         health -= damage;
 

@@ -13,6 +13,7 @@ public class VicMMovement : MonoBehaviour
     // components
     private Rigidbody2D rb;
     private Animator animator;
+    private Collider2D collisionThing;
 
     void Awake()
     {
@@ -26,6 +27,9 @@ public class VicMMovement : MonoBehaviour
 
         // get animator
         animator = GetComponent<Animator>();
+
+        // get collider
+        collisionThing = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -73,7 +77,15 @@ public class VicMMovement : MonoBehaviour
             // }
         }
 
-        
+        if (GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name == "VicM_Dodge")
+        {
+            collisionThing.enabled = false;
+            
+        }
+        else
+        {
+            collisionThing.enabled = true;
+        }
 
         // set vicM movement
         rb.velocity = new Vector2(speedX, speedY);

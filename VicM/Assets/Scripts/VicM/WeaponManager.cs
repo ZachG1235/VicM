@@ -53,6 +53,15 @@ public class WeaponManager : MonoBehaviour
         {
             StartCoroutine(SpecialAttack());
         }
+
+        if ( Input.GetKeyDown(KeyCode.Space) )
+        {
+            vicAnimator.SetBool("dodge", true);
+        }
+        else
+        {
+            vicAnimator.SetBool("dodge", false);
+        }
     }
 
     public void SetWeapon(int weapon)
