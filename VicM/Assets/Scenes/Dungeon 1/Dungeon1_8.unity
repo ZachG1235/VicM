@@ -606,15 +606,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160922126}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1691018890}
+  m_Father: {fileID: 2012071609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -390}
+  m_AnchoredPosition: {x: 5, y: -30}
   m_SizeDelta: {x: 1800, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &160922128
@@ -6346,7 +6346,6 @@ RectTransform:
   m_Children:
   - {fileID: 2012071609}
   - {fileID: 2064543429}
-  - {fileID: 160922127}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8739,6 +8738,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1151399549}
+  - {fileID: 160922127}
   m_Father: {fileID: 1691018890}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -8760,11 +8760,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1151399550}
   dialogue:
-  - 'VicM: In the ghetooooo'
-  - 'VicM: On a cold and gray Chicago morn, another baby child is born'
-  - 'VicM: In the ghetooooo'
-  - 'VicM: IN THE GHETOOOOO!!!'
-  textSpeed: 0.3
+  - 'VicM: Do you like my stick stick stick'
+  - 'VicM: My wooden stick stcik'
+  - 'VicM: You cannot afford afford for my wooden stick stick'
+  - 
+  textSpeed: 0.03
 --- !u!114 &2012071611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8905,11 +8905,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stats will display here:0
+  m_text: '
 
-    how are you:1
 
-    Doin good:2'
+    Damage:1
+
+    Speed:1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

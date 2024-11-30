@@ -5226,11 +5226,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stats will display here:0
+  m_text: '
 
-    how are you:1
 
-    Doin good:2'
+    Damage:1
+
+    Speed:1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5537,7 +5538,6 @@ RectTransform:
   m_Children:
   - {fileID: 1420584226}
   - {fileID: 957658280}
-  - {fileID: 1443362655}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5885,6 +5885,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 959386259}
+  - {fileID: 1443362655}
   m_Father: {fileID: 1067081356}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -5909,7 +5910,7 @@ MonoBehaviour:
   - 'VicM: Its the end of the world as I know it'
   - 'VicM: and I feel fiiiiiiiine!'
   - 
-  textSpeed: 0.3
+  textSpeed: 0.03
 --- !u!114 &1420584228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5974,15 +5975,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443362654}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1067081356}
+  m_Father: {fileID: 1420584226}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -390}
+  m_AnchoredPosition: {x: 5, y: -30}
   m_SizeDelta: {x: 1800, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443362656
