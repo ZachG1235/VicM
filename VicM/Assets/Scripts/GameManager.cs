@@ -12,23 +12,23 @@ public class GameManager : MonoBehaviour
     // depending on index, tell what rooms it will go to next
     private int[,] dungeon1Rooms = new int[17,4]
     {
-        {3,0,0,0},  // this is room 1, so top door goes to room 3
-        {6,3,0,0},
-        {7,4,1,2},
-        {8,0,0,3},
-        {9,0,0,0},
-        {10,0,2,0},
-        {11,8,3,0},
-        {0,9,4,7},
-        {13,0,5,8},
-        {14,11,6,0},
-        {0,12,7,10},
-        {16,0,0,11},
-        {17,0,9,0},
-        {0,15,10,0},
-        {0,16,0,14},
-        {0,0,12,15},
-        {0,0,13,0},
+        {3,0,0,0},   // room 1, so top door goes to room 3
+        {6,3,0,0},   // room 2
+        {7,4,1,2},   // room 3
+        {8,0,0,3},   // room 4
+        {9,0,0,0},   // room 5
+        {10,0,2,0},  // room 6
+        {11,8,3,0},  // room 7
+        {0,9,4,7},   // room 8
+        {13,0,5,8},  // room 9
+        {14,11,6,0}, // room 10, top door goes to room 14, right door goes to 11, bottom 6, no left door
+        {0,12,7,10}, // room 11
+        {16,0,0,11}, // room 12
+        {17,0,9,0},  // room 13
+        {0,15,10,0}, // room 14
+        {0,16,0,14}, // room 15
+        {0,0,12,15}, // room 16
+        {0,0,13,0},  // room 17
     };
 
     private Vector3[] dungeon1DoorPositions = new Vector3[4]

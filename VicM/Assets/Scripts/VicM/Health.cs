@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    public int health = 100;    // default to 100
+    public int health = VicMStats.curSettings.maxHealth;    // default to 100
     public GameObject fullHeartPrefab;
     public GameObject halfHeartPrefab;
     public Transform heartContainer;
@@ -46,8 +46,10 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("We just lost " + damage + " health!");
-        health -= damage;
+        //Debug.Log(GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name);
+        if (GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name == "VicM_Dodge") return;
+        Debug.Log("We just lost " + VicMStats.GetDamageWithDefense(damage) + " health!");
+        health -= VicMStats.GetDamageWithDefense(damage);
 
         // display new health amount
         CreateHearts();

@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
             // Check if within MaxDist for triggering actions
             if (distanceToTarget <= MaxDist)
             {
-                Debug.Log("Enemy is within MaxDist, triggering action");
+                //Debug.Log("Enemy is within MaxDist, triggering action");
                 Attack();
             }
         }
