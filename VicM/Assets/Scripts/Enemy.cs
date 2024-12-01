@@ -45,6 +45,8 @@ public class Enemy : MonoBehaviour
             // Move towards the VICMPOS
             transform.position += directionToTarget * MoveSpeed * Time.deltaTime;
 
+            //BUG;
+            //flipping the health bar is confusing only flip the character
             if (directionToTarget.x > 0 && !isFacingRight)
             {
                 Flip();
