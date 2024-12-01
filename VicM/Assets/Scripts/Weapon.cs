@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public int weaponDamage = 25;   // default to 25
+    public int weaponDamage = 15;   // default to 25
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
         {
             // deal damage to enemy
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.TakeDamage(weaponDamage, true);
+            enemy.TakeDamage(weaponDamage + VicMStats.GetDamageWithCritChance(), true);
 
             // animate it
             enemy.animator.SetTrigger("attacked");
@@ -32,7 +32,7 @@ public class Weapon : MonoBehaviour
             Enemy enemy = coll.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(weaponDamage, false);
+                enemy.TakeDamage(weaponDamage + VicMStats.GetDamageWithCritChance(), false);
 
                 // animate it
                 enemy.animator.SetTrigger("attacked");

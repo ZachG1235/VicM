@@ -19,6 +19,7 @@ public class VicMMovement : MonoBehaviour
     {
         // so that VicM stays through scene loads
         DontDestroyOnLoad(gameObject);
+        
     }
     void Start()
     {
@@ -30,6 +31,9 @@ public class VicMMovement : MonoBehaviour
 
         // get collider
         collisionThing = GetComponent<Collider2D>();
+
+        moveSpeed = VicMStats.curSettings.movementSpeed;
+        Debug.Log(moveSpeed);
     }
 
     // Update is called once per frame
@@ -93,6 +97,7 @@ public class VicMMovement : MonoBehaviour
         // set enemy pos to vicM position
         Enemy.VICMPOS = transform.position;
 
+        moveSpeed = VicMStats.curSettings.movementSpeed;
     }
 
     private void Flip()
