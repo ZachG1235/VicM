@@ -11,7 +11,58 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon 1/Dungeon1_1-Start.unity
     guid: 95b3323e606c95f4485e48555fa44aa8
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_2.unity
+    guid: 891704d65d17f044f9e941f8581bd7bd
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_3.unity
+    guid: 66e9213a96eea6b49ac8cf3e5dabcb9a
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_4.unity
+    guid: d14ea63508aa9f04bbc3c034bc966a33
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_5.unity
+    guid: dbf36e059671a4041872de50d62eeec1
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_6.unity
+    guid: 8348b23be9a39d944a5132034e396cab
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_7.unity
+    guid: 5d152dc3399215b4789f15cc1e057ab2
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_8.unity
+    guid: 1f5b9903ec32af24fb7111d650c6416f
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_9.unity
+    guid: 288d843c983d3294bb123d4341c79973
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_10.unity
+    guid: 87a1aa06e323b614fa99beddfdfdf71a
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_11.unity
+    guid: 64f02cfab42cd664e81acc6f0bc3765f
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_12.unity
+    guid: 3486ed79dd85e5d4683e2e6896e313b7
+  - enabled: 1
     path: Assets/Scenes/Dungeon 1/Dungeon1_13.unity
     guid: 51f774e9f17c169459820b7f17b1c9e2
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_14.unity
+    guid: cb554f34f9f3c4f45b678366ba6326d6
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_15.unity
+    guid: 4f38b40b6a6850447808f425946db4a9
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_16.unity
+    guid: dc1674f42e99f204fbc3df8e76f2184b
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_17-Boss.unity
+    guid: 5268bd00cd690a64483a0ce4fc063630
+  - enabled: 1
+    path: Assets/Scenes/Casino/CasinoLobby.unity
+    guid: 91c7941702b3247c3ac98a16a1856b41
+  - enabled: 1
+    path: Assets/Scenes/StartingScreen.unity
+    guid: f4beff2476e2a4db68e43fa503543be2
   m_configObjects: {}

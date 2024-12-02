@@ -13,10 +13,13 @@ public class VicMMovement : MonoBehaviour
     // components
     private Rigidbody2D rb;
     private Animator animator;
+    private Collider2D collisionThing;
 
     void Awake()
     {
+        // so that VicM stays through scene loads
         DontDestroyOnLoad(gameObject);
+        
     }
     void Start()
     {
@@ -25,6 +28,12 @@ public class VicMMovement : MonoBehaviour
 
         // get animator
         animator = GetComponent<Animator>();
+
+        // get collider
+        collisionThing = GetComponent<Collider2D>();
+
+        moveSpeed = VicMStats.curSettings.movementSpeed;
+        Debug.Log(moveSpeed);
     }
 
     // Update is called once per frame
@@ -46,6 +55,7 @@ public class VicMMovement : MonoBehaviour
             // set vicM isWalking to true
             animator.SetBool("isWalking", true);
 
+            // this code makes vic face direction moving
             // flip character if moving left or right
             if (speedX > 0 && !isFacingRight)
             {
@@ -55,6 +65,30 @@ public class VicMMovement : MonoBehaviour
             {
                 Flip();
             }
+
+            // this code makes vic face where mouse is facing
+            // Get the mouse position in world space
+            // Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            // // Check if the mouse is to the left or right of the character
+            // if (mouseWorldPosition.x > transform.position.x && !isFacingRight)
+            // {
+            //     Flip();
+            // }
+            // else if (mouseWorldPosition.x < transform.position.x && isFacingRight)
+            // {
+            //     Flip();
+            // }
+        }
+
+        if (GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name == "VicM_Dodge")
+        {
+            collisionThing.enabled = false;
+            
+        }
+        else
+        {
+            collisionThing.enabled = true;
         }
 
         // set vicM movement
@@ -63,6 +97,7 @@ public class VicMMovement : MonoBehaviour
         // set enemy pos to vicM position
         Enemy.VICMPOS = transform.position;
 
+        moveSpeed = VicMStats.curSettings.movementSpeed;
     }
 
     private void Flip()
@@ -79,5 +114,4 @@ public class VicMMovement : MonoBehaviour
         // set local scale to sclae
         transform.localScale = scale;
     }
-   
 }
