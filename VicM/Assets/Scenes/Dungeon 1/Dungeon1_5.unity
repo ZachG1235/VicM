@@ -122,6 +122,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+
 --- !u!1 &25165305
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,6 +698,7 @@ Transform:
   - {fileID: 521223465}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!1 &521223464
 GameObject:
   m_ObjectHideFlags: 0
@@ -5162,6 +5164,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+
   - component: {fileID: 827759019}
   - component: {fileID: 827759018}
   m_Layer: 0
@@ -8211,4 +8214,4 @@ SceneRoots:
   - {fileID: 827759019}
   - {fileID: 2031355794}
   - {fileID: 479762933}
-  - {fileID: 964414712}
+
