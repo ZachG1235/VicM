@@ -51,6 +51,8 @@ public class Enemy : MonoBehaviour
             // Move towards the VICMPOS
             transform.position += directionToTarget * MoveSpeed * Time.deltaTime;
 
+            //BUG;
+            //flipping the health bar is confusing only flip the character
             if (directionToTarget.x > 0 && !isFacingRight)
             {
                 Flip();
@@ -64,7 +66,7 @@ public class Enemy : MonoBehaviour
             // Check if within MaxDist for triggering actions
             if (distanceToTarget <= MaxDist)
             {
-                Debug.Log("Enemy is within MaxDist, triggering action");
+                //Debug.Log("Enemy is within MaxDist, triggering action");
                 Attack();
             }
         }
