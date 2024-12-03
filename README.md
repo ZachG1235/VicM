@@ -17,5 +17,8 @@ Current Version: v0.1.0 (Pre-release, Prototype)
 ### Built With:  
 Unity
 
+### Expectation Planning:  
+https://docs.google.com/spreadsheets/d/1YTVfn0spXlTt9P9B8MUo7PdinMuvnG1yI_aoxKrMS-o/edit?usp=sharing  
+
 ### Thank you for checking us out!
 - VicM Team
