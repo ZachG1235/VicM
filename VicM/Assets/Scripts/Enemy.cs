@@ -134,9 +134,7 @@ public class Enemy : MonoBehaviour
             {
                 Debug.Log("incremented maxHealth");
                 VicMStats.curSettings.maxHealth += 5;
-
-                //VicMStats.MaximizeHearts();
-
+                GameManager.SGameManager.VicM.GetComponent<Health>().MaximizeHealth();
             }
             else if (randomStat == 4)
             {

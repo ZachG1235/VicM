@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;  // Add this namespace for TextMeshPro
+using TMPro;
+using UnityEngine.SceneManagement;  // Add this namespace for TextMeshPro
 
 public class RockPaperScissorsGame : MonoBehaviour
 {
@@ -27,21 +28,11 @@ public class RockPaperScissorsGame : MonoBehaviour
         scissorsButton.onClick.AddListener(() => MakeChoice(Choice.Scissors));
     }
 
-    //public void ChoiceRock()
-    //{
-    //    playerChoice = Choice.Rock;
-    //    MakeChoice(playerChoice);
-    //}
-    //public void ChoiceScissors()
-    //{
-    //    playerChoice = Choice.Scissors;
-    //    MakeChoice(playerChoice);
-    //}
-    //public void ChoicePaper()
-    //{
-    //    playerChoice = Choice.Paper;
-    //    MakeChoice(playerChoice);
-    //}
+    public void Exit()
+    {
+        SceneManager.LoadScene("CasinoLobby");
+        GameManager.SGameManager.VicM.transform.position = Vector3.zero;
+    }
 
     // Function that is called when a button is clicked
     void MakeChoice(Choice playerSelection)
@@ -68,9 +59,20 @@ public class RockPaperScissorsGame : MonoBehaviour
             (player == Choice.Paper && computer == Choice.Rock) ||
             (player == Choice.Scissors && computer == Choice.Paper))
         {
-            return "You Win!";
+            VicMStats.curSettings.maxHealth += 5;
+            GameManager.SGameManager.VicM.GetComponent<Health>().MaximizeHealth();
+            return "You Win! Increasing health!";
         }
 
-        return "You Lose!";
+        if (VicMStats.curSettings.defense >= 5)
+        {
+            VicMStats.curSettings.defense -= 5;
+        }
+        else
+        {
+            VicMStats.curSettings.defense = 0;
+        }
+
+        return "You Lose! Decreasing defense!";
     }
 }
