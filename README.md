@@ -4,7 +4,7 @@
 Follow this link: https://zachg1235.github.io/VicM/  
 
 ## DEMO VIDEO:  
-Watch here: https://www.youtube.com/watch?v=jRC0wPeB1Yw  
+Watch here: https://youtu.be/3jnikUMrVNw  
 
 ---
 
