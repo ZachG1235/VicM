@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class VicMStats : MonoBehaviour
 {
+    
     public struct VICMSETTINGS
     {   
         // implemented
@@ -26,8 +27,9 @@ public class VicMStats : MonoBehaviour
     }
 
     static public VICMSETTINGS curSettings;
+    static public GameObject vicmGameObject;
 
-    
+
     private void Awake()
     {
         curSettings.damage = 5;
@@ -70,5 +72,10 @@ public class VicMStats : MonoBehaviour
             return 2 * curSettings.damage;
         }
         return curSettings.damage;
+    }
+
+    static public void MaximizeHearts()
+    {
+        vicmGameObject.GetComponent<Health>().MaximizeHealth();
     }
 }

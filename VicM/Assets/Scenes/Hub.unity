@@ -4229,13 +4229,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoggyFri
       objectReference: {fileID: 0}
-    - target: {fileID: 2698512340915416765, guid: ec84b15607187d84798691053adbf7c5, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 1971626761984116596, guid: ec84b15607187d84798691053adbf7c5, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2698512340915416765, guid: ec84b15607187d84798691053adbf7c5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2698512340915416765, guid: ec84b15607187d84798691053adbf7c5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3877864710799806505, guid: ec84b15607187d84798691053adbf7c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5320,7 +5324,7 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera(Hub)
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5388,7 +5392,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -5801,7 +5805,7 @@ MonoBehaviour:
   - 'VicM: No need to fear, I will save the soybabies!! '
   - Gofu(God of Tofu):Left click to attack
   - 'Gofu(God of Tofu): Press WASD to move around'
-  - 'Gofu(God of Tofu): Press SPACEBAR to activate your special!!'
+  - 'Gofu(God of Tofu): Press Right Click to activate your special!!'
   textSpeed: 0.03
 --- !u!114 &666983807
 MonoBehaviour:
@@ -5942,6 +5946,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2665200449520246785, guid: 7c51825c2ccbe784a9166996528fe7d0, type: 3}
+      propertyPath: statUI
+      value: 
+      objectReference: {fileID: 428649620}
+    - target: {fileID: 2665200449520246785, guid: 7c51825c2ccbe784a9166996528fe7d0, type: 3}
+      propertyPath: followingCamera
+      value: 
+      objectReference: {fileID: 519420028}
     - target: {fileID: 3330682172577724025, guid: 7c51825c2ccbe784a9166996528fe7d0, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.01
@@ -5990,6 +6002,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VicM
       objectReference: {fileID: 0}
+    - target: {fileID: 4576635590799895655, guid: 7c51825c2ccbe784a9166996528fe7d0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7115555589169645403, guid: 7c51825c2ccbe784a9166996528fe7d0, type: 3}
       propertyPath: m_Interpolate
       value: 2
@@ -6001,6 +6017,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4576635590799895655, guid: 7c51825c2ccbe784a9166996528fe7d0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 826963148}
+    - targetCorrespondingSourceObject: {fileID: 4576635590799895655, guid: 7c51825c2ccbe784a9166996528fe7d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 826963157}
   m_SourcePrefab: {fileID: 100100000, guid: 7c51825c2ccbe784a9166996528fe7d0, type: 3}
 --- !u!1 &826963139 stripped
 GameObject:
@@ -6017,6 +6036,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6c7e362ec772b349834ed6ebbdd3aa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &826963157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826963139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e03b15e65760e94ca775bca6cfc6411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &912828546
@@ -37360,7 +37391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -39009,15 +39040,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1216183461276059955, guid: 838ea5d2f5c97ba4d9cde1196ca41eb7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1216183461276059955, guid: 838ea5d2f5c97ba4d9cde1196ca41eb7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1606384947814245731, guid: 838ea5d2f5c97ba4d9cde1196ca41eb7, type: 3}
       propertyPath: m_Name
       value: BurgerBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606384947814245731, guid: 838ea5d2f5c97ba4d9cde1196ca41eb7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

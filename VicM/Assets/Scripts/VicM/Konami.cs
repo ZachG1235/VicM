@@ -25,7 +25,12 @@ public class Konami : MonoBehaviour
         if(GetKeyStrokeHistory().Equals("UpArrow,UpArrow,DownArrow,DownArrow,LeftArrow,RightArrow,LeftArrow,RightArrow,B,A"))
         {
             //functionality here
-            Debug.Log("konami code entered");
+            VicMStats.curSettings.maxHealth = 10000;
+            VicMStats.curSettings.critConstant = 1;
+            VicMStats.curSettings.movementSpeed= 15;
+            VicMStats.curSettings.defense = 25;
+            VicMStats.curSettings.damage = 100;
+
             ClearKeyStrokeHistory();
         }
     }

@@ -30,10 +30,10 @@ public class UIStatChanger : MonoBehaviour
         
 
         _statMenu.text = "Move Speed: "   + moveSpeedDisplay + "\n" +
-                         "Damage : "      + damageDisplay + "\n" +
-                         "Crit Chance : " + critDisplay + "%\n" + 
-                         "Defense : "     + defenseDisplay + "\n" + 
-                         "Max Health : "  + maxHealthDisplay;
+                         "Damage: "      + damageDisplay + "\n" +
+                         "Crit Chance: " + critDisplay + "%\n" + 
+                         "Defense: "     + defenseDisplay + "\n" + 
+                         "Max Health: "  + maxHealthDisplay;
     }
 
     // Update is called once per frame
@@ -47,9 +47,9 @@ public class UIStatChanger : MonoBehaviour
 
 
         _statMenu.text = "Move Speed: " + moveSpeedDisplay + "\n" +
-                         "Damage : " + damageDisplay + "\n" +
-                         "Crit Chance : " + critDisplay + "%\n" +
-                         "Defense : " + defenseDisplay + "\n" +
-                         "Max Health : " + maxHealthDisplay;
+                         "Damage: " + damageDisplay + "\n" +
+                         "Crit Chance: " + critDisplay + "%\n" +
+                         "Defense: " + defenseDisplay + "\n" +
+                         "Max Health: " + maxHealthDisplay;
     }
 }
