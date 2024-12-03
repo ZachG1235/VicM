@@ -9,8 +9,6 @@ public class Health : MonoBehaviour
     public GameObject fullHeartPrefab;
     public GameObject halfHeartPrefab;
     public Transform heartContainer;
-
-    public GameObject followingCamera;
     public GameObject statUI;
 
     // Start is called before the first frame update
@@ -66,9 +64,9 @@ public class Health : MonoBehaviour
         {
             // END GAME HERE
             Destroy(statUI);
-            Destroy(followingCamera);
             Destroy(this.gameObject);
-            SceneManager.LoadScene(0);
+            Destroy(GameManager.SGameManager.gameObject);
+            SceneManager.LoadScene(18);
         }
     }
     void OnCollisionEnter2D(Collision2D coll)

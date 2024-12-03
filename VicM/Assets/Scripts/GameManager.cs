@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     // game manager is singleton
     public static GameManager SGameManager;
+    public GameObject VicMPrefab;
     public GameObject VicM;
 
     // depending on index, tell what rooms it will go to next
@@ -54,6 +56,13 @@ public class GameManager : MonoBehaviour
         {
             // Set this instance as the only one
             SGameManager = this;
+
+            // check if vicM exists
+            if (VicM == null)
+            {
+                // create vicM if not
+                VicM = Instantiate<GameObject>(VicMPrefab);
+            }
             DontDestroyOnLoad(gameObject);
 
             // set roomNumber
