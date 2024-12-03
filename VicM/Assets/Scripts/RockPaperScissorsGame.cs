@@ -27,6 +27,22 @@ public class RockPaperScissorsGame : MonoBehaviour
         scissorsButton.onClick.AddListener(() => MakeChoice(Choice.Scissors));
     }
 
+    //public void ChoiceRock()
+    //{
+    //    playerChoice = Choice.Rock;
+    //    MakeChoice(playerChoice);
+    //}
+    //public void ChoiceScissors()
+    //{
+    //    playerChoice = Choice.Scissors;
+    //    MakeChoice(playerChoice);
+    //}
+    //public void ChoicePaper()
+    //{
+    //    playerChoice = Choice.Paper;
+    //    MakeChoice(playerChoice);
+    //}
+
     // Function that is called when a button is clicked
     void MakeChoice(Choice playerSelection)
     {

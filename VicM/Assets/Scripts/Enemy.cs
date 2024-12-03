@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
@@ -118,6 +119,44 @@ public class Enemy : MonoBehaviour
         {
             // "enemy" dies
             // can make it drop something here if we want
+            int randomStat = Random.Range(0, 5);
+            if (randomStat == 1)
+            {
+                Debug.Log("incremented damage");
+                VicMStats.curSettings.damage += 5;
+            }
+            else if (randomStat == 2)
+            {
+                Debug.Log("incremented defense");
+                VicMStats.curSettings.defense += 5;
+            }
+            else if (randomStat == 3)
+            {
+                Debug.Log("incremented maxHealth");
+                VicMStats.curSettings.maxHealth += 5;
+
+                //VicMStats.MaximizeHearts();
+
+            }
+            else if (randomStat == 4)
+            {
+                Debug.Log("incremented movementSpeed");
+                VicMStats.curSettings.movementSpeed += 1;
+            }
+            else if (randomStat == 0)
+            {
+                if (VicMStats.curSettings.critConstant > 1)
+                {
+                    Debug.Log("incremented critConstant");
+                    VicMStats.curSettings.critConstant -= 1;
+                }
+                else
+                {
+                    Debug.Log("incremented damage");
+                    VicMStats.curSettings.damage += 5;
+                }
+            }
+
             Destroy(gameObject);
         }
     }

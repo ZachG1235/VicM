@@ -10,6 +10,9 @@ public class Health : MonoBehaviour
     public GameObject halfHeartPrefab;
     public Transform heartContainer;
 
+    public GameObject followingCamera;
+    public GameObject statUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +20,7 @@ public class Health : MonoBehaviour
         CreateHearts();
     }
 
-    private void CreateHearts()
+    public void CreateHearts()
     {
         // delete hearts if there are any
         foreach (Transform child in heartContainer)
@@ -44,6 +47,11 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void MaximizeHealth()
+    {
+        health = VicMStats.curSettings.maxHealth;
+        CreateHearts();
+    }
     public void TakeDamage(int damage)
     {
         //Debug.Log(GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name);
@@ -57,7 +65,10 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             // END GAME HERE
-            //SceneManager.LoadScene(0);
+            Destroy(statUI);
+            Destroy(followingCamera);
+            Destroy(this.gameObject);
+            SceneManager.LoadScene(0);
         }
     }
     void OnCollisionEnter2D(Collision2D coll)

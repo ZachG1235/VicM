@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -41,6 +42,12 @@ public class WeaponManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        if (SceneManager.GetActiveScene().name == "TofuLettuceAvocado")
+        {
+            Debug.Log("don't listen");
+            return;
+        }
         // check for attack
         if (Input.GetMouseButtonDown(0))
         {
