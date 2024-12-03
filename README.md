@@ -20,5 +20,8 @@ Unity
 ### Expectation Planning:  
 https://docs.google.com/spreadsheets/d/1YTVfn0spXlTt9P9B8MUo7PdinMuvnG1yI_aoxKrMS-o/edit?usp=sharing  
 
+### Map Meta:
+![MapInfo](/GithubAssets/map.png)  
+
 ### Thank you for checking us out!
 - VicM Team
