@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
 
     private int currentRoom;
     public GameObject entrancePrefab;
+    public GameObject statMenuPrefab;
+    public GameObject statMenu;
     public Animator transitioner;
 
     void Awake()
@@ -62,6 +64,10 @@ public class GameManager : MonoBehaviour
             {
                 // create vicM if not
                 VicM = Instantiate<GameObject>(VicMPrefab);
+
+                // create statmenu
+                statMenu = Instantiate<GameObject>(statMenuPrefab);
+
             }
             DontDestroyOnLoad(gameObject);
 
@@ -81,7 +87,8 @@ public class GameManager : MonoBehaviour
         transitioner.SetTrigger("start");
 
         // check if loading into dungeon room
-        if (currentRoom > 0)
+        // will probably have to change this (18 is the hub, i don't feel like improving it rn)
+        if (currentRoom != 18)
         {
             StartCoroutine(GenerateDoors());
         }
