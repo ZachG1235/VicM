@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     public HealthBar healthBar;
     public int maxHealth = 100;
     public int damage;
+    public float dropRate;
+    public GameObject dropPrefab;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -155,16 +157,18 @@ public class Enemy : MonoBehaviour
                 }
             }
 
+            // drop item
+            DropItem();
             Destroy(gameObject);
         }
     }
 
-    // sets damage that enemy will do to player
-    // used in subclasses
-    public void SetDamage(int damageDealt)
-    {
-        this.damage = damageDealt;
-    }
+    // // sets damage that enemy will do to player
+    // // used in subclasses
+    // public void SetDamage(int damageDealt)
+    // {
+    //     this.damage = damageDealt;
+    // }
 
     // this is used to make the enemy stop moving temporarily if it gets hit or attacks
     public IEnumerator ChangeSpeedTemporarily()
@@ -188,5 +192,30 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         coll.enabled = true;
+    }
+
+    public void DropItem()
+    {
+        GameObject drop = null;
+
+        // check for guaranteed drop
+        if (dropRate == 0)
+        {
+            drop = Instantiate<GameObject>(dropPrefab);
+        }
+        // otherwise, assume random drop
+        else
+        {
+            // randomize drop
+            if (Random.value < dropRate)
+            {
+                drop = Instantiate<GameObject>(dropPrefab);
+            }
+        }
+
+        if (drop != null)
+        {
+            drop.transform.position = transform.position;
+        }
     }
 }

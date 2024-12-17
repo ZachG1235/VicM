@@ -325,7 +325,8 @@ MonoBehaviour:
   healthBar: {fileID: 8450675505447490109}
   maxHealth: 100
   damage: 20
-  VICMThing: {fileID: 4576635590799895655, guid: 7c51825c2ccbe784a9166996528fe7d0, type: 3}
+  dropRate: 0.5
+  dropPrefab: {fileID: 6254682776647864012, guid: cef1b3e936bbe420189841777df5e44c, type: 3}
 --- !u!1 &2096229883545841707
 GameObject:
   m_ObjectHideFlags: 0

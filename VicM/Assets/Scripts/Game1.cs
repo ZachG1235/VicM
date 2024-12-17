@@ -12,7 +12,6 @@ public class Game1 : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Player collided with door. Scene Changed!");
-            //GameManager.SGameManager.VicM.GetComponent<Health>().TakeDamage(99999999);
             SceneManager.LoadScene(sceneName);
         }
     }

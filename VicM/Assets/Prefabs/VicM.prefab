@@ -405,8 +405,6 @@ MonoBehaviour:
   fullHeartPrefab: {fileID: 1449559412511145831, guid: 4cad3d4859c1e4043b27b9da33c3a7d1, type: 3}
   halfHeartPrefab: {fileID: 9146628181339416868, guid: 0523d943540930f438eee1138dc01e4f, type: 3}
   heartContainer: {fileID: 7625963206639954162}
-  followingCamera: {fileID: 0}
-  statUI: {fileID: 0}
 --- !u!114 &4491541474788445717
 MonoBehaviour:
   m_ObjectHideFlags: 0
