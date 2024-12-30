@@ -355,6 +355,8 @@ MonoBehaviour:
   healthBar: {fileID: 4671673577930438067}
   maxHealth: 750
   damage: 50
+  dropRate: 0
+  dropPrefab: {fileID: 3716128336591750998, guid: a1f664fae53d1fc4790ac84a1fb90e3c, type: 3}
 --- !u!1 &4835331086128518888 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3263344706565303754, guid: 36d1e69fdb3a2454daf185916631e5ec, type: 3}
